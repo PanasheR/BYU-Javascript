@@ -13,13 +13,13 @@
     var message;
 function alarm() {
     if (dayOfWeek== 6 || dayOfWeek == 0) {
-        alarm = 'Sleep in' + ' It\'s a ' + now;
+        alarm = 'Sleep in' + ' It\'s ' + now;
     }
     else if ((month == 1 && dayOfMonth == 1) || (month == 7 && dayOfMonth == 4) || (month == 12 && dayOfMonth == 25)){
-        alarm = 'Today is a holiday, enjoy your day' + ' It\'s a ' + now;
+        alarm = 'Today is a holiday, enjoy your day' + ' It\'s ' + now;
     }
     else {
-        alarm = 'Get up and work. It is a normal workday' + ' It\'s a ' + now;
+        alarm = 'Get up and work. It is a normal workday' + ' It\'s ' + now;
     }
     document.getElementById('output').innerHTML = alarm;
 }
