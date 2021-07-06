@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>MathsQuiz</title>
+  <script>
+   function quiz(){
+    //string to float conversion
+   let a = parseFloat(document.getElementById('val1').value);
+   let b = parseFloat(document.getElementById('val2').value);
+   let operator = (document.getElementById('operator').value);
+   let answer = parseFloat(document.getElementById('answer').value);
+
+//addition
+   let c = a+b;
+//subtraction
+   let d = a-b;
+//multiplication
+   let e = a*b;
+//division
+   let f = a/b;
+
+   let div = document.getElementById('outputDiv');
+
+//Confirmation
+   if (operator == '+') {
+      if (answer === c){
+      div.innerHTML = 'Correct! Good job!';
+        }
+      else {
+      div.innerHTML = 'Incorrect! Try again!';
+       }
+   }
+   else if (operator == '-') {
+           if (answer === d){
+           div.innerHTML = 'Correct! Good job!';
+           }
+          else {
+          div.innerHTML = 'Incorrect! Try again!';
+           }
+    }
+   else if (operator == '*') {
+           if (answer === e){
+           div.innerHTML = 'Correct! Good job!';
+           }
+          else {
+          div.innerHTML = 'Incorrect! Try again!';
+          }
+   }
+   else if (operator == '/') {
+          if (answer === f){
+          div.innerHTML = 'Correct! Good job!';
+          }
+         else {
+         div.innerHTML = 'Incorrect! Try again!';
+          }
+   }
+
+   }
+   </script>
+</head>
+
+<body>
+   <h2> Test Your Math Skills! </h2>
+   <p>Second columntakes operation sign(/,+,-,*)</p>
+   <input type="text" id="val1">
+   <input type="text" id="operator">
+   <input type="text" id="val2">
+   =
+   <input type="text" id="answer">
+   <button type="button" onclick="quiz()">Check</button>
+   <div id="outputDiv"></div>
+</body>
+</html>

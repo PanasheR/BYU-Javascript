@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Final Test</title>
+  
+
+<script>
+ function test() {
+  let list = [ 5, -2.1, 6.3, 9, 5, 13 ];
+  let output = addEnd(list);
+    
+  document.getElementById('output').innerHTML = output;
+}
+  
+  function addEnd(list){
+   let endValue = list [list.length-1];
+   return endValue;
+  }
+</script>
+</head>
+
+<body>      
+<h3>Array End Value Checking</h3>
+<p>Finding end value of the array: [ 5, -2.1, 6.3, 9, 5, 13 ]</p><hr>
+<button type="button" onclick="test()">Check</button><br>
+<div id="output"> </div> 
+
+</body>       
+</html>

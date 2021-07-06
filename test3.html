@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Numbers</title>
+<script>
+/* Input: numbers
+ * Processing: sum
+ * Output: true or false
+ */
+ function numbers() {
+   let a = parseFloat(document.getElementById('val1').value);
+   let b = parseFloat(document.getElementById('val2').value);
+   let c = a + b;
+    if ((a > 5 && b > 5) || (c > 20)){
+        message = 'True';
+    }
+    else {
+        message = 'False';
+    }
+    document.getElementById('output').innerHTML = message;
+}
+
+</script>
+</head>
+
+<body>
+    <h4>Return true if both numbers are greater than 5 or their sum is greater than 20</h4><hr>
+Please enter two numbers:
+<input type="text" id="val1" size="5">
+<input type="text" id="val2" size="5">
+<button type="button" onclick="numbers()">Click</button>
+<div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Wind Chill</title>
+	<script type="text/javascript">
+		/*Input: Get temperature value in Fareinheits from user
+		       : Get windspeed value in miles per hour from user
+		 *Process: Calculates winchill using the temperature and windspeed values a formula f
+		 *output: Displays output as windchill
+		*/
+		function doInputOutput() {
+			let tempF = parseInt(document.getElementById('tempInputBox').value);
+			let speed = parseInt(document.getElementById('speedInputBox').value);
+			let a = windchill(tempF, speed);
+			document.getElementById('outputDiv').innerHTML = a;
+		}
+		function windchill (t, s) {
+			let f = 35.74 + (0.6215*t )- (35.75*(s**0.16)) + ((0.4275)*t*(s**0.16));
+			let windchillF =f.toFixed(2);
+			return windchillF;
+		}
+	</script>
+</head>
+<body>
+<h3>Wind Chill calculation</h3><hr>
+<b>Please enter Temperature in Fareinheit:</b> <input type="text" id="tempInputBox"><br> 
+<b>Please enter Windspeed in miles/hour  :</b> <input type="text" id="speedInputBox"><hr>
+<button type="button" onclick="doInputOutput()">WindChill?</button>
+<div id="outputDiv"></div>
+</body>
+</html>

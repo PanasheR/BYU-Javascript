@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Quartz to litres</title>
+	<script>
+/* Input: volume in quartz
+ * Processing: convert the volume from quartz to litres
+ * Output: the volume converted to litres
+ */
+function quartzToLitres() {
+    // Read a quartz temperature from the user.
+    let text = document.getElementById('quartzInputBox').value;
+
+    // Convert what the user typed from text into a number.
+    let q = parseFloat(text);
+
+    // Convert the quartz volume into litre.
+    let a = q*0.95;
+    let l = a.toFixed(2);
+
+    // Display the litre volume to the user.
+    document.getElementById('litreDiv').innerHTML = l + ' litres';
+}
+</script>
+</head>
+<body>
+    <h3>Convert quartz to litres</h3>
+Enter a volume in quartz: <input type="text" id="quartzInputBox">
+<button type="button" onclick="quartzToLitres()">Convert</button>
+<div id="litreDiv"></div>
+</body>
+</html>

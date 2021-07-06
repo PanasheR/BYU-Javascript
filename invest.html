@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Investment</title>
+	<script type="text/javascript">
+		/*Input: Get principlal value from user
+		       : Get annual rate from user
+		       : Get number of years from user
+		       : Get number of periods per year from user
+		 *Process: Calculate future investments using formula f =a(1+r)**n
+		 *output: Displays output as Future Investment
+		*/
+		function doFV() {
+			let principal = parseFloat(document.getElementById('principalInputBox').value);
+			let annualRate = parseFloat(document.getElementById('annualRateInputBox').value);
+			let years = parseFloat(document.getElementById('yearsInputBox').value);
+			let periodsPerYear = parseFloat(document.getElementById('periodsPerYearInputBox').value);
+			let z = computeFutureValue(principal,annualRate,years,periodsPerYear);
+			document.getElementById('outputDiv').innerHTML = '<br>'+'$'+z;
+		}
+		function computeFutureValue(principal,annualRate,years,periodsPerYear) {
+			let r = annualRate/periodsPerYear;
+			let n = years*periodsPerYear;
+			let f = principal*((1+r)**n);
+			let futureInvestment =f.toFixed(2);
+			return futureInvestment;
+		}
+	</script>
+</head>
+<body>
+<h3>Calculate your future investments</h3><hr>
+<b>Please enter your principal value:</b><input type="text" id="principalInputBox"><br>
+<br> 
+<b>Please enter your annual rate:</b><input type="text" id="annualRateInputBox"><br>
+<br>
+<b>Please enter years:</b><input type="text" id="yearsInputBox"><br> 
+<br>
+<b>Please enter number of periods per year:</b><input type="text" id="periodsPerYearInputBox"><hr>
+<button type="button" onclick="doFV()">Future Investment</button>
+<div id="outputDiv"></div>
+</body>
+</html>

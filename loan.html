@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>loan</title>
+	<script type="text/javascript">
+		/*Input: Get principlal value from user
+		       : Get annual rate from user
+		       : Get number of years from user
+		       : Get number of periods per year from user
+		       : Get number of payments to date from user
+		 *Process: Calculate Balance and payments values using formulas: p =ar/(1-((1+r)**(-n))
+		                                                               : b =(a(1+r)**d)-(p(((1+r)**d)-1))
+		 *output: Displays output as Balance and Payment
+		*/
+		function doPayment() {
+			//get input from user
+			let principal = parseFloat(document.getElementById('principalInputBox').value);
+			let annualRate = parseFloat(document.getElementById('annualRateInputBox').value);
+			let years = parseFloat(document.getElementById('yearsInputBox').value);
+			let periodsPerYear = parseFloat(document.getElementById('periodsPerYearInputBox').value);
+			//direct program execution to another function 
+			let z = computePayment(principal,annualRate,years,periodsPerYear);
+			document.getElementById('outputDiv').innerHTML ='<br>'+'$'+ z;
+		}
+		function doBalance() {
+			//get input from user 
+			let principal = parseFloat(document.getElementById('principalInputBox').value);
+			let annualRate = parseFloat(document.getElementById('annualRateInputBox').value);
+			let years = parseFloat(document.getElementById('yearsInputBox').value);
+			let periodsPerYear = parseFloat(document.getElementById('periodsPerYearInputBox').value);
+			let paymentsPaidToDate = parseFloat(document.getElementById('paymentsPaidToDateInputBox').value);
+			//direct program execution to another function
+			let y = computeBalance(principal,annualRate,years,periodsPerYear,paymentsPaidToDate);
+			document.getElementById('output2Div').innerHTML ='<br>'+'$'+ y;
+		}
+		function computePayment(principal,annualRate,years,periodsPerYear) {
+			//break the formula of getting balance into codes the program can execute
+			let n = periodsPerYear*years;
+			let r = annualRate/periodsPerYear;
+			let p = (principal*r)/(1-(1+r)**(-n));
+			let payments =p.toFixed(2);
+			return payments;
+		}
+		function computeBalance(principal,annualRate,years,periodsPerYear,paymentsPaidToDate) {
+			//use the formula from computePayment() function to get p
+			let n = periodsPerYear*years;
+			let r = annualRate/periodsPerYear;
+			let p = (principal*r)/(1-(1+r)**(-n));
+            //break the formula of getting balance into  codes the program can execute
+			let b = (principal*(1+r)**paymentsPaidToDate)-((p*(((1+r)**paymentsPaidToDate)-1))/r)
+			let balance = b.toFixed(2);
+			return balance;
+		}
+	</script>
+</head>
+<body>
+<h3>Check your loan details</h3><hr>
+<b>Please enter your principal value:</b><input type="text" id="principalInputBox"><br> 
+<br>
+<b>Please enter your annual rate(% e.g:0.15):</b><input type="text" id="annualRateInputBox"><br>
+<br>
+<b>Please enter years:</b><input type="text" id="yearsInputBox"><br> 
+<br>
+<b>Please enter number of periods per year:</b><input type="text" id="periodsPerYearInputBox"><br>
+<br>
+<b>Please enter number of payments paid to-date:</b><input type="text" id="paymentsPaidToDateInputBox"><hr>
+<br>
+<button type="button" onclick="doPayment()">Payment amount</button><br>
+<div id="outputDiv"></div>
+<br>
+<button type="button" onclick="doBalance()">Balance</button><br>
+<div id="output2Div"></div>
+</body>
+</html>

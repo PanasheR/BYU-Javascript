@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Footwear</title>
+  <script>
+//helping out a troubled user get the best footwear
+  function footwear(){
+  let weather = document.getElementById('weather').value;
+
+  let message;
+  switch (weather){
+  case 'hot':
+  message = 'get some sandals, it is hot today';
+  break;
+
+  case 'sunny':
+  message = 'get some sandals, it is hot today';
+  break;
+
+  case 'warm':
+  message = 'get some sandals, it is hot today';
+  break;
+
+  case 'rain':
+  message = 'get some galoshes, it is rainy outside';
+  break;
+
+  case 'raining':
+  message = 'get some galoshes, it is rainy outside';
+  break;
+
+  case 'showers':
+  message = 'get some galoshes, it is rainy outside';
+  break;
+
+  case 'snow' | 'snowy':
+  message = 'get some boots, it is snowy outside';
+  break;
+
+  case 'snow':
+  message = 'get some boots, it is snowy outside';
+  break;
+
+  case 'snowy':
+  message = 'get some boots, it is snowy outside';
+  break;
+
+  default:
+  message = 'go get some shoes';
+  break;
+  }
+
+  document.getElementById('outputBox').innerHTML= message;
+  }
+
+  </script>
+</head>
+
+<body>
+  <P>Kindly tell us how the weather is your side<br>, we want to help you get the best footwear.Use simple words</P>
+  <input type="text" id="weather">
+  <button type="button" onclick="footwear()">You should get</button>
+  <div id="outputBox"></div>
+  </body>
+</html>

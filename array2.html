@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Array cntd</title>
+<script type="text/javascript">
+/* Defining Table
+ * Input: no user input
+ * Processing: Test the countEvens and multiply functions by calling them.
+ * Output: The values returned from the countEvens and multiply functions.
+ */
+function test() {
+    let list1 = [ 17, 8, 9, 5, 20 ];
+    let list2 = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+
+    // Test the countEvens function by calling it two times.
+    let count1 = countEvens(list1);
+    let count2 = countEvens(list2);
+
+    // Test the multiply function by calling it two times.
+    let mult1 = multiply(list1,3);
+    let mult2 = multiply(list2,2);
+
+    // Build a string to display to the user.
+    let output =
+            count1 + '<br>' +
+            count2 + '<br>' +
+            mult1 + '<br>' +
+            mult2;
+
+    // Display the output string for the user to see.
+    document.getElementById('output').innerHTML = output;
+}
+function countEvens(list){
+	//intialize sum to zero
+    sum = 0;
+    for (i=0; i<list.length; i++){
+    	//use modulo operator to test for even value
+        if (list[i] % 2 == 0){
+        	//increment sum with even number count
+            sum += 1;
+        }
+    }
+    return sum;
+}
+
+function multiply(list, multiplier){
+	//create an empty list to accept the result after looping
+    list3 = [];
+    for (i=0; i<list.length; i++){
+    	//add multiplied result to empty list
+        list3.push(list[i] * multiplier);
+    }
+    return list3;
+}
+</script>
+</head>
+<body>
+<h2><b><u>More arraying</u></b></h2>
+<h3><tt>:program will ouput two even number counts and two lists of multiplied numbers respectively</tt></h3><hr>
+<button type="button" onclick="test()">Check</button><br>
+<div id="output"> </div><hr>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Powers of Two</title>
+
+<script>
+function powersOftwo(){
+//code displays multiples of two
+    let index = 2;
+    let output = "";
+    for (let i = 0; i <= 31; i++){
+    output += "2**" + i + " = " + index ** i + "<br/>";   
+    }
+    document.getElementById('output').innerHTML = output;
+}
+</script>
+</head>
+<body>
+<button type='button' onclick='powersOftwo()'>Click Here</button>
+<div id='output'> </div>
+</body>
+</html>

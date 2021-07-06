@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>sumOdds</title>
+  <script>
+    /*Input: User enters an integer
+     *Process: Adds up all odd numbers lower
+     *Output:displays summ
+     */
+    function sumOdds() {
+      let number = parseFloat(document.getElementById('numberInput').value);
+      let sumOdds = 0;
+      
+      for ( n = 1; n <= number; n +=2) {
+      sumOdds += n;
+ 
+
+      document.getElementById('outputDiv').innerHTML = sumOdds;
+      }      
+    }        
+  </script>
+</head>
+<body>
+  <p>Enter an integer and get sum of all odd numbers before that integer</p>
+  <input type="text" id="numberInput" size="4"><br><br>
+  <button type="button" onclick=" sumOdds()">Sum</button><br>
+  <div id="outputDiv"></div>
+    
+</body>
+</html>

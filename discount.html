@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Discount</title>
+	<script type="text/javascript">
+		/*Input: User enters customer's subtotal
+			 *Process: Calculates the discount
+			 *Output: Displays amount due
+			*/
+		function discount() {
+			//input from user
+			 var subTotal = parseInt(document.getElementById('subTotal').value);
+			  var dayOfWeek = new Date().getDay();
+			 if (subTotal > 50 && (dayOfWeek == 2 || dayOfWeek == 3)) {
+			    var a = 0.1 - 0.06;
+			 	var b = a * subTotal;
+			 	var d = subTotal - a;
+			 	
+			 }
+			 else {
+			 	var c = 0.06 * subTotal;
+			 	var d = subTotal + c;
+			 }
+			 document.getElementById('output').innerHTML = d;
+		}
+	</script>
+</head>
+<body>
+Please enter your subTotal: <input type="text" id="subTotal" size="3"><br>  
+<button type="button" onclick="discount()">Calculate</button>  
+<div id="output"></div>  
+</body>
+</html>

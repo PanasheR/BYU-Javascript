@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>milage</title>
+	<script type="text/javascript">
+		/*Input:User enters intiaL and final odometer reading
+		       :User also enters number of gallons used
+		*Process:Calculate gallons used per mile
+		*Output:number of gallons used per mile
+		*/
+		function gallonPerhour(){
+			//reads intial and final odomoeter reading from user
+			let intial = document.getElementById('intialInputBox').value;
+			let final = document.getElementById('finalInputBox').value;
+			let gallons = document.getElementById('gallonsInputBox').value;
+			//convert what user entered to number
+			 let a = parseFloat(intial);
+			 let b = parseFloat(final);
+			 let c = parseFloat(gallons);
+			 //calculate gallons per mile
+			 let d = a+b;
+			 let e = d/c;
+			 // Display gallons per mile to the user.
+             document.getElementById('gallonperHourDiv').innerHTML = 'milage = ' + e;
+
+		}
+	</script>
+</head>
+<body>
+Enter intial odomoeter reading: <input type="text" id="intialInputBox">
+Enter final odomoeter reading: <input type="text" id="finalInputBox">
+Enter gallons used: <input type="text" id="gallonsInputBox">
+<button type="button" onclick="gallonPerhour()">Calculate</button>
+<div id="gallonperHourDiv"></div>
+</body>
+</html>

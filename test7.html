@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Final Test</title>
+  
+
+<script>
+function nameOutput(){
+	let fn = makeFullName("Theodore", "Roosevelt");
+	let display = fn;
+	document.getElementById('output').innerHTML = display;
+}
+ function makeFullName(givenName, familyName) {
+ 	let output = givenName+"  "+familyName;
+    return output;
+ }
+ let fn = makeFullName("Theodore", "Roosevelt");
+</script>
+</head>
+
+<body>      
+<h3>Names</h3><hr>
+<h4>Joining strings</h4>
+<button type="button" onclick="nameOutput()">Check</button><br>
+<div id="output"> </div> 
+
+</body>       
+</html>

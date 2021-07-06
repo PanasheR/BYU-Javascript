@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Alarm</title>
+
+<script>
+//program acts as an alarm and reminder to user
+    var now = new Date();
+    var month = now.getMonth();
+    var dayOfMonth = now.getDate();
+    var dayOfWeek = now.getDay();
+    var message;
+function alarm() {
+    if (dayOfWeek== 6 || dayOfWeek == 0) {
+        alarm = 'Sleep in' + ' It\'s a ' + now;
+    }
+    else if ((month == 1 && dayOfMonth == 1) || (month == 7 && dayOfMonth == 4) || (month == 12 && dayOfMonth == 25)){
+        alarm = 'Today is a holiday, enjoy your day' + ' It\'s a ' + now;
+    }
+    else {
+        alarm = 'Get up and work. It is a normal workday' + ' It\'s a ' + now;
+    }
+    document.getElementById('output').innerHTML = alarm;
+}
+
+</script>
+</head>
+<button type="button" onclick="alarm()">Alarm</button>  
+<div id="output"></div>  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Operations between array</title>
+  
+
+<script>
+  /* Defining Table
+ * Input: no user input
+ * Processing: Test the addEnds and getMiddle functions by calling them.
+ * Output: The values returned from the addEnds and getMiddle functions.
+ */
+function test() {
+    let list1 = [ 17, 8, 9, 5, 20  ];
+    let list2 = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+    
+     // Test the addEnds function by calling it two times
+    let sum1 = addEnds(list1);
+    let sum2 = addEnds(list2);
+    
+    // Test the getMiddle function by calling it two times.
+    let mid1 = getMiddle(list1);
+    let mid2 = getMiddle(list2);
+    
+     // Build a string to display to the user.
+    let output =
+        sum1 + '<br>' +
+        sum2 + '<br>' + 
+        mid1 + '<br>' +
+        mid2;
+    
+    // Display the output string for the user to see   
+    document.getElementById('output').innerHTML = output;
+}
+  
+  function addEnds(list){
+    //adds values of the two end values and returns sum
+   let sum = list [0] + list [list.length-1];
+   return sum;
+  }
+
+  function getMiddle(list){
+  if (list.length % 2 == 1){
+      let b = list[list.length/2 - 0.5];
+      return b;
+  } else{ 
+      let b = (list[list.length/2 - 1] + list[list.length/2]) / 2;
+      return b;}
+}
+</script>
+</head>
+
+<body>      
+<h3>Array Value Checking</h3>
+<h4>Returns sums and middle values of both arrays respectively...the arrays are: [ 17, 8, 9, 5, 20  ] & [ 12, 4, 8, 15, 17, 5, 20, 11 ]</h4><hr>
+<button type="button" onclick="test()">Check</button><br><br>
+<div id="output"> </div> 
+
+</body>       
+</html>
